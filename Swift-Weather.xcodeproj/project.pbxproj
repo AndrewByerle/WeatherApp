@@ -12,6 +12,7 @@
 		C11BB34029538F4E004DB39E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C11BB33F29538F4E004DB39E /* Assets.xcassets */; };
 		C11BB34329538F4E004DB39E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C11BB34229538F4E004DB39E /* Preview Assets.xcassets */; };
 		C11BB34A29553407004DB39E /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11BB34929553407004DB39E /* WeatherButton.swift */; };
+		C11BB34C29553F5C004DB39E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11BB34B29553F5C004DB39E /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		C11BB33F29538F4E004DB39E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C11BB34229538F4E004DB39E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C11BB34929553407004DB39E /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
+		C11BB34B29553F5C004DB39E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C11BB34D29564B78004DB39E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +56,13 @@
 		C11BB33A29538F4A004DB39E /* Swift-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				C11BB34D29564B78004DB39E /* Info.plist */,
 				C11BB33B29538F4A004DB39E /* Swift_WeatherApp.swift */,
 				C11BB33D29538F4A004DB39E /* ContentView.swift */,
 				C11BB33F29538F4E004DB39E /* Assets.xcassets */,
 				C11BB34129538F4E004DB39E /* Preview Content */,
 				C11BB34929553407004DB39E /* WeatherButton.swift */,
+				C11BB34B29553F5C004DB39E /* Model.swift */,
 			);
 			path = "Swift-Weather";
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				C11BB33E29538F4A004DB39E /* ContentView.swift in Sources */,
 				C11BB33C29538F4A004DB39E /* Swift_WeatherApp.swift in Sources */,
 				C11BB34A29553407004DB39E /* WeatherButton.swift in Sources */,
+				C11BB34C29553F5C004DB39E /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,10 +280,11 @@
 				DEVELOPMENT_TEAM = 6R9G4EKB53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Swift-Weather/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -303,10 +310,11 @@
 				DEVELOPMENT_TEAM = 6R9G4EKB53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Swift-Weather/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -9,19 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isNight = false
-    
+    @State var results = TaskEntry()
+    @State var dailyTemperatures = [Double]()
+
     var body: some View {
         ZStack {
             BackgroundView(isNight: $isNight)
             VStack{
-                CityText(cityTextName: "Cupertino, CA")
-                MainWeather(image: isNight ? "cloud.moon.fill" : "cloud.sun.fill", temperature: "76")
+                CityText(cityTextName: "Manhattan, NY")
+                MainWeather(image: isNight ? "cloud.moon.fill" : "cloud.sun.fill", temperature: "\(dailyTemperatures.count > 0 ? dailyTemperatures[0] : 0)")
                 HStack(spacing: 20){
-                    WeatherDay(dayOfWeek: "TUE", imgName: "cloud.sun.fill", temperature: 49)
-                    WeatherDay(dayOfWeek: "WED", imgName: "sun.max.fill", temperature: 50)
-                    WeatherDay(dayOfWeek: "THUR", imgName: "cloud.snow.fill", temperature: 28)
-                    WeatherDay(dayOfWeek: "FRI", imgName: "cloud.rain.fill", temperature: 44)
-                    WeatherDay(dayOfWeek: "SAT", imgName: "cloud.sun.fill", temperature: 55)
+                    WeatherDay(dayOfWeek: "TUE", imgName: "cloud.sun.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[1]) : 0)
+                    WeatherDay(dayOfWeek: "WED", imgName: "sun.max.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[2]) : 0)
+                    WeatherDay(dayOfWeek: "THUR", imgName: "cloud.snow.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[3]) : 0)
+                    WeatherDay(dayOfWeek: "FRI", imgName: "cloud.rain.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[4]) : 0)
+                    WeatherDay(dayOfWeek: "SAT", imgName: "cloud.sun.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[5]) : 0)
                 }
                 Spacer()
                 Button{
@@ -30,11 +32,34 @@ struct ContentView: View {
                 } label: {
                     WeatherButton(title: "Change Day Time", backgroundColor: .white, textColor: .blue)
                 }
-                
+
                 Spacer()
-            }
+            }.onAppear(perform: loadData)
         }
     }
+
+    func loadData() {
+        print("SHEEE \(results)")
+            guard let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=35.91&longitude=-79.06&daily=temperature_2m_max&temperature_unit=fahrenheit&timezone=America%2FNew_York") else {
+                print("Invalid URL")
+                return
+            }
+            let request = URLRequest(url: url)
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let data = data {
+                    if let response = try? JSONDecoder().decode(TaskEntry.self, from: data) {
+                        DispatchQueue.main.async {
+                            self.results = response
+                            self.dailyTemperatures = response.daily?.temperature_2m_max ?? []
+                            print(dailyTemperatures)
+                        }
+                        return
+                    }
+                }
+            }.resume()
+        }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

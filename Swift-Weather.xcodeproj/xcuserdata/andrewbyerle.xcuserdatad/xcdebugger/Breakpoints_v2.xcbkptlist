@@ -8,16 +8,64 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FA9480ED-A602-4346-A470-5D5AAA484022"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift-Weather/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B53C511-3ECB-494C-963D-5172D6026FDC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift-Weather/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7B53C511-3ECB-494C-963D-5172D6026FDC - 3c55e10054558b90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift_Weather.ContentView.body.getter : some"
+                  moduleName = "Swift-Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewbyerle/SwiftProjects/Swift-Weather/Swift-Weather/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "171">
+               </Location>
+               <Location
+                  uuid = "7B53C511-3ECB-494C-963D-5172D6026FDC - 8911ce6310522724"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift_Weather.BackgroundView, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(Swift_Weather.CityText, Swift_Weather.MainWeather, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(Swift_Weather.WeatherDay, Swift_Weather.WeatherDay, Swift_Weather.WeatherDay, Swift_Weather.WeatherDay, Swift_Weather.WeatherDay)&gt;&gt;, SwiftUI.Spacer, SwiftUI.Button&lt;Swift_Weather.WeatherButton&gt;, SwiftUI.Spacer)&gt;&gt;)&gt; in Swift_Weather.ContentView.body.getter : some"
+                  moduleName = "Swift-Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewbyerle/SwiftProjects/Swift-Weather/Swift-Weather/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "233">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
