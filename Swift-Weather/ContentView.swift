@@ -11,6 +11,9 @@ struct ContentView: View {
     @State private var isNight = false
     @State var results = TaskEntry()
     @State var dailyTemperatures = [Double]()
+    
+    var dayOfWeekNames = ["TUE", "WED", "THUR", "FRI", "SAT"]
+    var imgNames = ["cloud.sun.fill", "sun.max.fill", "cloud.snow.fill", "cloud.rain.fill", "cloud.sun.fill"]
 
     var body: some View {
         ZStack {
@@ -19,27 +22,23 @@ struct ContentView: View {
                 CityText(cityTextName: "Manhattan, NY")
                 MainWeather(image: isNight ? "cloud.moon.fill" : "cloud.sun.fill", temperature: "\(dailyTemperatures.count > 0 ? dailyTemperatures[0] : 0)")
                 HStack(spacing: 20){
-                    WeatherDay(dayOfWeek: "TUE", imgName: "cloud.sun.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[1]) : 0)
-                    WeatherDay(dayOfWeek: "WED", imgName: "sun.max.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[2]) : 0)
-                    WeatherDay(dayOfWeek: "THUR", imgName: "cloud.snow.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[3]) : 0)
-                    WeatherDay(dayOfWeek: "FRI", imgName: "cloud.rain.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[4]) : 0)
-                    WeatherDay(dayOfWeek: "SAT", imgName: "cloud.sun.fill", temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[5]) : 0)
+                    ForEach(0..<5) { i in
+                        WeatherDay(dayOfWeek: dayOfWeekNames[i], imgName: imgNames[i], temperature: dailyTemperatures.count > 0 ? Int(dailyTemperatures[i]) : 0)
+                    }
                 }
                 Spacer()
                 Button{
-                    print("hello")
+                    print("yo")
                     isNight.toggle()
                 } label: {
                     WeatherButton(title: "Change Day Time", backgroundColor: .white, textColor: .blue)
                 }
-
                 Spacer()
             }.onAppear(perform: loadData)
         }
     }
 
     func loadData() {
-        print("SHEEE \(results)")
             guard let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=35.91&longitude=-79.06&daily=temperature_2m_max&temperature_unit=fahrenheit&timezone=America%2FNew_York") else {
                 print("Invalid URL")
                 return
@@ -52,7 +51,6 @@ struct ContentView: View {
                         DispatchQueue.main.async {
                             self.results = response
                             self.dailyTemperatures = response.daily?.temperature_2m_max ?? []
-                            print(dailyTemperatures)
                         }
                         return
                     }
